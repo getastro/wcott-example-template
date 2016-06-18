@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Astro - Digital Signage </title>
+
+    <!-- Bootstrap core CSS -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Original template -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <link href="https://ting-y.github.io/Astro/jquery.bxslider.css" rel="stylesheet" />
+    
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style type="text/css" media="screen">
+
+		* {
+		  -webkit-border-radius: 0 !important;
+			 -moz-border-radius: 0 !important;
+				  border-radius: 0 !important;
+		}
+		body { font-family: 'Montserrat', sans-serif; }
+		.cover { background-color: white;}
+		.first { background-color: black; color:white; }
+		.second { 
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a0766+0,660762+100 */
+			background: #1a0766; /* Old browsers */
+			background: -moz-linear-gradient(left,  #1a0766 0%, #660762 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  #1a0766 0%,#660762 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  #1a0766 0%,#660762 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a0766', endColorstr='#660762',GradientType=1 ); /* IE6-9 */
+				
+			color: #fff; font-size: 150%;}
+		.fourth { background-color: white; color:black; }
+		.fifth { background-color: black; color: white; }
+		.logo-ncdsb {
+			float: left;
+			width: 50px;
+			height: 50px;
+			background: url(http://portal.niagaracatholic.ca/join-us/images/logo-ncdsb.png) center left no-repeat;
+			text-indent: -999px;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			font-size: 0;
+			line-height: 0;
+			opacity: 0.85;
+		}
+		.row, ul, .third p {
+			margin: 0 !important;
+			margin-right: 0 !important;
+			margin-left: 0 !important;
+			padding: 0 !important;
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+		ul, menu, dir {
+			display: block !important;
+			list-style-type: none !important;
+			-webkit-margin-before: 0px !important;
+			-webkit-margin-after: 0px !important;
+			-webkit-margin-start: 0px !important;
+			-webkit-margin-end: 0px !important;
+			-webkit-padding-start: 0px !important;
+		}
+		.lead {
+			margin-bottom: 0;
+		}
+		.bx-wrapper {
+			margin-bottom: 0;
+		}
+		.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 { 
+			padding-right: 0px !important;
+			padding-left: 0px !important;
+		}
+		.fourth .bxslider li { display: table; overflow: hidden; }
+		.fourth .bxslider p, .fourth .bxslider li { padding-right: 1.5em; width: auto !important; display: table-cell !important; vertical-align: middle !important; white-space: nowrap; font-size: 125%; }
+
+		.fifth .bxslider li { display: table; overflow: hidden; }
+		.fifth .bxslider p, .fifth .bxslider li { padding-right: 1.5em; width: auto !important; display: table-cell !important; vertical-align: middle !important; white-space: nowrap; font-size: 125%; }
+		
+		/* responsive iframe */
+		.flex-video {
+			position: relative;
+			padding-top: 25px;
+			padding-bottom: 67.5%;
+			height: 0;
+			overflow: hidden;
+		}
+		.flex-video.widescreen { 
+			padding-bottom: 57.25%;
+		}
+		.flex-video.vimeo { 
+			padding-top: 0;
+		}
+		.flex-video iframe,
+		.flex-video object,
+		.flex-video embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+			.flex-video { 
+				padding-top: 0;
+			}
+		}
+	
+	</style>
+  </head>
+
+  <body>
+	<div id="screen" class="row">
+		<div class="primary col-md-8" data-api-host="https://public-api.wordpress.com/rest/v1.1/sites/getcontentfrom.wordpress.com/">
+			<div class="first">
+					<ul class="bxslider" data-api-endpoint="posts" data-api-parameters="category=instagram-likes&number=25" data-api-template="repeat">
+						<li style="position:relative;">
+							<img data-api-property="featured_image"></img>
+							<h1 style="position:absolute;top:45%; text-align:center;margin:0 35%;" data-api-property="title"></h1>
+						</li>
+					</ul>
+			</div><!-- first -->
+		</div><!-- left -->
+		<div class="secondary col-md-4" data-api-host="https://public-api.wordpress.com/rest/v1.1/sites/getcontentfrom.wordpress.com/">
+			<div class="second">					
+				<div data-api-endpoint="posts/51">
+					<div data-api-property="content" style="padding:25% 5% 0; text-align:center;"></div>
+				</div>
+			</div><!-- second -->
+		</div><!-- secondary -->
+		<div class="fourth lead col-md-12" data-api-host="https://public-api.wordpress.com/rest/v1.1/sites/dailypost.wordpress.com/">
+					<ul class="bxslider" data-api-endpoint="posts" data-api-parameters="category=layout-design&number=5" data-api-template="repeat">
+						<li>
+							<h1 data-api-property="title"></h1>
+						</li>
+					</ul>
+		</div><!-- fourth -->
+		<div class="fifth lead col-md-12" data-api-host="https://public-api.wordpress.com/rest/v1.1/sites/jetpack.me/">
+					<ul class="bxslider" data-api-endpoint="posts" data-api-parameters="category=features&number=10" data-api-template="repeat">
+						<li><h1 data-api-property="title"></h1></li>
+					</ul>
+		</div><!-- fourth -->
+	</div><!-- .cover -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://ting-y.github.io/Astro/jquery.bxslider.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/astro/0.3.1/astro-api.min.js"></script>
+	<script>
+		
+	document.addEventListener('AstroAPI-render', function (e) {
+	
+		// execute only in screen larger than
+		if ($(window).width() > 992) {
+			$(window).resize(function(){location.reload();});
+			$('html, body').css('overflow', 'hidden'); 
+		}
+
+		// Add responsive classes		
+		$('img').addClass('img-responsive');
+		$('iframe, embed, object').wrap("<div class='flex-video widescreen'/>");
+		$('.embed-youtube iframe').attr("src", function(i, src) {
+		  return src + '&amp;autoplay=1&amp;loop=1';
+		});
+
+		// defining full screen
+		function fullscreen() {
+			jQuery(window).css({
+				width: jQuery(window).width(),
+				height: jQuery(window).height()
+			});
+		}		
+		fullscreen();
+		
+		// defining sections' sizes 
+		$('.first').height(function(){ return $(window).height() * 0.82; }).width(function(){ return $('.primary').width() * 1; });
+		$('.second').height(function(){ return $(window).height() * 0.82; }).width(function(){ return $('.secondary').width() * 1; });
+		$('.third').height(function(){ return $(window).height() * 0.82; }).width(function(){ return $('.tertiary').width() * 1; });
+		$('.fourth').height(function(){ return $(window).height() * 0.09; }).width(function(){ return $(window).width() * 1; });
+		$('.fifth').height(function(){ return $(window).height() * 0.09; }).width(function(){ return $(window).width() * 1; });
+	
+		// set element size to parent's size
+		$('iframe, embed, object, .flex-video, .widescreen').height(function(){ return $('.first').height() * 1; }).width(function(){ return $('.first').width() * 1; });
+		$('.first img').height(function(){ return $('.first').height() * 1; }).width(function(){ return $('.first').width() * 1; });
+		$('.second .img-full').height(function(){ return $('.second').height() * 1; }).width(function(){ return $('.second').width() * 1; });
+		$('.third img').width(function(){ return $('.third').width() * 1; });
+		$('.fourth .bx-viewport, .fourth .bxslider li, .fourth .bxslider p').height(function(){ return $('.fourth').height() * 1; });
+		$('.fifth .bx-viewport, .fifth .bxslider li, .fifth .bxslider p').height(function(){ return $('.fifth').height() * 1; });
+	
+		// image style
+		$('.second img').css('margin','auto').removeClass('img-responsive');
+
+		// bxslider
+		$('.first .bxslider').bxSlider({
+			auto: true,
+			mode: 'fade',
+			pager: false,
+			controls: false,
+			pause: 8000,
+			speed: 1000
+		});
+		$('.second .bxslider').bxSlider({
+			auto: true,
+			mode: 'fade',
+			pager: false,
+			pause: 16000,
+			speed: 1000
+		});
+		$('.third .bxslider').bxSlider({
+			ticker: true,
+			auto: true,
+			mode: 'vertical',
+			minSlides: 10,
+			maxSlides: 10,
+			speed: 42000
+		});
+		$('.fourth .bxslider').bxSlider({
+			ticker: true,
+			speed: 72000
+		});
+		$('.fifth .bxslider').bxSlider({
+			ticker: true,
+			speed: 67000
+		});
+
+	});
+	</script>
+	</body>
+</html>
